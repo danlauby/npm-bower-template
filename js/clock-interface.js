@@ -6,7 +6,7 @@ $(function() {
     $("#day").append("<option value='"+day+"'>" + day + "</option>");
   });
 
-  alarm.getHours().forEach(function(hour) {
+  alarm.getHour().forEach(function(hour) {
     $('#hour').append("<option value='"+hour+"'>" + hour + "</option>");
   });
 
@@ -18,13 +18,21 @@ $(function() {
 
   $('#alarm-input').submit(function(e) {
     e.preventDefault();
-    var target = "Tuesday, March 14, 2017 1:10 PM";
+    var year = moment().format("YYYY");
+    var target = $("#day").val() +", "+year+" "+ $("#hour").val() +":"+ $("#min").val() + " " + $("#ampm").val();
+    $("#target").text(target);
+    $("#alarm-input").children("button").toggle();
+
+    $("#new-reminder").click(function(){
+      window.location.reload();
+    });
     setInterval(function(){
       var clock = moment().format('LLLL');
       if(clock === target){
         $("body").css({"background-color":"#000"})
       }
-      $('.clock').text(clock);
+      console.log(target);
+      $('#current').text(clock);
     }, 500);
   });
 });

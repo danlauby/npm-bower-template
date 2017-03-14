@@ -16,7 +16,7 @@ Clock.prototype.getSevenDays = function() {
   return days;
 }
 
-Clock.prototype.getHours = function() {
+Clock.prototype.getHour = function() {
   var hours = [];
   for (var i = 1; i <= 12; i++) {
     hours.push(i);
@@ -26,8 +26,12 @@ Clock.prototype.getHours = function() {
 
 Clock.prototype.getMin = function() {
   var minutes = [];
-  for (var i = 0; i <= 55; i+=5) {
-    minutes.push(i);
+  for (var i = 0; i <= 55; i+=1) {
+    var minute = i;
+    if(minute.toString().length<2){
+      minute = "0" + i;
+    }
+    minutes.push(minute);
   }
   return minutes;
 };

@@ -19,7 +19,7 @@
     </div>
     <div class="clock">
       <form class="form-group "id="alarm-input">
-        <p>Remind me to go to sleep on
+        <p>Remind me to go to sleep on <span id="target">
           <select id="day">
 
           </select>
@@ -35,8 +35,15 @@
             <option value="PM">PM</option>
             <option value="AM">AM</option>
           </select>
+        </span>
         </p>
+        <button type="submit">Set sleep reminder</button>
+        <button type="button" id="new-reminder">Set new reminder</button>
+
       </form>
+      <div id="output">
+        <p>It is currently <span id="current"></span></p>
+      </div>
     </div>
   </body>
 </html>
