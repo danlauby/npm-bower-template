@@ -2,10 +2,6 @@ function Clock() {
 
 }
 
-Clock.prototype.alarm = function() {
-
-};
-
 Clock.prototype.getSevenDays = function() {
   var days = [];
   for (var i = 0; i <= 7; i++){
@@ -26,7 +22,7 @@ Clock.prototype.getHour = function() {
 
 Clock.prototype.getMin = function() {
   var minutes = [];
-  for (var i = 0; i <= 55; i+=1) {
+  for (var i = 0; i <= 59; i+=1) {
     var minute = i;
     if(minute.toString().length<2){
       minute = "0" + i;
@@ -35,5 +31,12 @@ Clock.prototype.getMin = function() {
   }
   return minutes;
 };
+
+Clock.prototype.snooze = function() {
+  var currentSeconds = moment().format('ss');
+  var targetSeconds = moment().format('ss') + 5;
+  // console.log(seconds);
+  return targetSeconds;
+}
 
 exports.clockModule = Clock;
