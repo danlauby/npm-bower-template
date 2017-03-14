@@ -27,11 +27,12 @@ $(function() {
     var year = moment().format("YYYY");
     var target = $("#day").val() +", "+year+" "+ $("#hour").val() +":"+ $("#min").val() + " " + $("#ampm").val();
     $("#target").text(target);
-    $("#alarm-input").children("button").toggle();
-
+    $("#alarm-input").children("button.notsnooze").toggle();
+    $('#output').show();
     $("#snooze").click(function(){
       $("body").css({"background-color":"#fff"})
       snooze = true;
+      $("#snooze").hide();
       setTimeout(function(){
         snooze = false;
         $("body").css({"background-color":"#000"})
