@@ -92,13 +92,14 @@ gulp.task('cssBuild', function() {
 
 gulp.task('bowerBuild', ['bower'], function(){
   browserSync.reload();
+
 });
 
 gulp.task('htmlBuild', function() {
   browserSync.reload();
 });
 
-gulp.task('serve', function() {
+gulp.task('serve', function() {//try adding ['build'] to this task
   browserSync.init({
     server: {
       baseDir: "./",

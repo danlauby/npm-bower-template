@@ -1,6 +1,6 @@
 {
-  "name": "template",
-  "description": "a npm/bower project template",
+  "name": "JS Alarms",
+  "description": "a JS alarm using moment.js",
   "main": "index.js",
   "license": "ISC",
   "homepage": "",
@@ -13,6 +13,7 @@
   ],
   "dependencies": {
     "jquery": "^3.1.1",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "moment": "^2.17.1"
   }
 }
