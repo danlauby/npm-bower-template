@@ -110,5 +110,5 @@ gulp.task('serve', function() {//try adding ['build'] to this task
 
   gulp.watch(['js/*.js'], ['jsBuild']);
   gulp.watch(["scss/*.scss"], ['cssBuild']);
-  gulp.watch(['*.html'], ['htmlBuild'])
+  gulp.watch(['*.html'], ['htmlBuild']);
 });
